@@ -8,3 +8,4 @@ Requirements:
 TODO:
 
 change Baudrate
+change Delay between Messages

@@ -4,3 +4,6 @@ Requirements:
 1. 8 Channels
 2. Fail Safe
 3. Serial Protocol
+
+TODO:
+change Baudrate

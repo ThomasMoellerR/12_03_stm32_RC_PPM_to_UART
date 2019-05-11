@@ -6,4 +6,5 @@ Requirements:
 3. Serial Protocol
 
 TODO:
+
 change Baudrate

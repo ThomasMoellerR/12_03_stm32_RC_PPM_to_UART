@@ -1,0 +1,2 @@
+tim2.c:69:6:TIM2_Ini	8	static
+tim2.c:87:6:TIM2_HAL_TIM_IC_CaptureCallback	16	static

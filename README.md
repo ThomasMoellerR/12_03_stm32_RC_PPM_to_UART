@@ -7,5 +7,5 @@ Requirements:
 
 TODO:
 
-change Baudrate
-change Delay between Messages
+1. change Baudrate
+2. change Delay between Messages

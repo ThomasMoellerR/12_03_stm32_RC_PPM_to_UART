@@ -22,7 +22,7 @@ Src/tim4.o: ../Src/tim4.c ../Src/typ.h ../Src/TIM4.h ../Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Src/tim2.h \
- ../Src/tim3.h
+ ../Src/tim3.h ../Src/ctl.h
 
 ../Src/typ.h:
 
@@ -79,3 +79,5 @@ Src/tim4.o: ../Src/tim4.c ../Src/typ.h ../Src/TIM4.h ../Inc/main.h \
 ../Src/tim2.h:
 
 ../Src/tim3.h:
+
+../Src/ctl.h:

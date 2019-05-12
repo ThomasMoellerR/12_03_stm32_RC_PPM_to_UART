@@ -14,6 +14,7 @@
 #include "main.h"
 #include "tim2.h"
 #include "tim3.h"
+#include "ctl.h"
 
 /******************************************************************************
 *  Local Constants
@@ -45,6 +46,8 @@ TUINT16 TIM4_TIM3_u16Ch1_Counter;
 TUINT16 TIM4_TIM3_u16Ch2_Counter;
 TUINT16 TIM4_TIM3_u16Ch3_Counter;
 TUINT16 TIM4_TIM3_u16Ch4_Counter;
+
+TUINT16 EXTI_PC13_Counter;
 
 /******************************************************************************
 *  Local Function Prototypes
@@ -80,6 +83,34 @@ void TIM4_Ini (void)
 
 void TIM4_HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+
+	// Fail Safe LED detection
+
+	if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)) // Inverse logic
+	{
+		CTL_FailSafe_Detected = 0; // Wenne High dann kein Failsafe
+	}
+	else
+	{
+		CTL_FailSafe_Detected = 1;
+	}
+
+
+	/*
+	if (EXTI_PC13_Counter < 100)
+	{
+		EXTI_PC13_Counter++;
+	}
+	else
+	{
+		// Fail Safe action
+
+		CTL_FailSafe_Detected = 1;
+	}
+	*/
+
+
+	// Channels
 	TIM4_TIM2_u16Ch1_Counter++;
 	TIM4_TIM2_u16Ch2_Counter++;
 	TIM4_TIM2_u16Ch3_Counter++;

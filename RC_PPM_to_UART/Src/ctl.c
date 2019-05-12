@@ -39,12 +39,15 @@ DMA_HandleTypeDef hdma_usart1_tx;
 
 tyun_AnyData unAnyData;
 
+TUINT8 au8Temp[100];
+
 /******************************************************************************
 *  Global Variables
 ******************************************************************************/
 
 TUINT8 CTL_Temp = 0;
-TUINT8 au8Temp[100];
+
+TUINT8 CTL_FailSafe_Detected = 0;
 
 /******************************************************************************
 *  Local Function Prototypes
@@ -121,11 +124,10 @@ void CTL_Main (void)
 	au8Temp[14] = unAnyData.au8Data[0];
 	au8Temp[15] = unAnyData.au8Data[1];
 
+	au8Temp[16] = CTL_FailSafe_Detected;
 
 
-
-
-	SER1_Send_Protocol(au8Temp, 16);
+	SER1_Send_Protocol(au8Temp, 17);
 
 
 	HAL_UART_Transmit_DMA(&huart1, SER1_au8SndBuf, SER1_TransmitFrameLength) ;

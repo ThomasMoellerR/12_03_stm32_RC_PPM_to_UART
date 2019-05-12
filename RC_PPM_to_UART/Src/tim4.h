@@ -45,6 +45,8 @@ extern TUINT16 TIM4_TIM3_u16Ch2_Counter;
 extern TUINT16 TIM4_TIM3_u16Ch3_Counter;
 extern TUINT16 TIM4_TIM3_u16Ch4_Counter;
 
+extern TUINT16 EXTI_PC13_Counter;
+
 /******************************************************************************
 *  Global Function Prototypes
 ******************************************************************************/

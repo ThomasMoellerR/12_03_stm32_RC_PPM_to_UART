@@ -28,6 +28,7 @@
 #include "tim3.h"
 #include "tim4.h"
 #include "ctl.h"
+#include "exti.h"
 
 /* USER CODE END Includes */
 
@@ -421,7 +422,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
@@ -431,6 +432,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
@@ -473,12 +478,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	/*
-	if (GPIO_Pin == GPIO_PIN_13)
-	{
-		EXTI_PC13_Counter = 0;
-		CTL_FailSafe_Detected = 0;
-	}*/
+
+	EXTI_HAL_GPIO_EXTI_Callback(GPIO_Pin);
+
 }
 
 /* USER CODE END 4 */

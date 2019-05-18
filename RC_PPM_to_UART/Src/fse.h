@@ -1,12 +1,12 @@
 
 /******************************************************************************
-*  File           :  ctl.h
+*  File           :  fse.h
 *  Version        :  1
-*  Last Changes   :  2019-05-11 18:24:20
+*  Last Changes   :  2019-05-18 14:50:58
 ******************************************************************************/
 
-#ifndef __CTL_H
-#define __CTL_H
+#ifndef __FSE_H
+#define __FSE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,16 +30,22 @@ extern "C" {
 *  Global Variables
 ******************************************************************************/
 
-extern TUINT8 CTL_Temp;
+extern TUINT8 FSE_Temp;
+
+extern TUINT16 FSE_u16FailSafe_LEDisBlinkingCounter;
+extern TUINT8 FSE_u8FailSafe_LEDisBlinking;
+
+extern TUINT8 FSE_u8FailSafe_LEDisOnCounter;
+extern TUINT8 FSE_u8FailSafe_LEDisOnCounter_Blocking;
+extern TUINT8 FSE_u8FailSafe_LEDisOn;
+
 
 
 /******************************************************************************
 *  Global Function Prototypes
 ******************************************************************************/
 
-extern void CTL_Ini (void);
-extern void CTL_Main (void);
-
+extern void FSE_Ini (void);
 
 /******************************************************************************
 *  Changes        :  
@@ -52,8 +58,8 @@ extern void CTL_Main (void);
 }
 #endif
 
-#endif /* __CTL_H */
+#endif /* __FSE_H */
 
 /******************************************************************************
-*  END OF FILE    :  ctl.h
+*  END OF FILE    :  fse.h
 ******************************************************************************/

@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c ../Inc/main.h \
+Src/exti.o: ../Src/exti.c ../Src/typ.h ../Src/exti.h ../Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -21,8 +21,12 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Src/tim2.h \
- ../Src/typ.h ../Src/tim3.h ../Src/tim4.h ../Src/ctl.h ../Src/exti.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Src/ctl.h \
+ ../Src/fse.h
+
+../Src/typ.h:
+
+../Src/exti.h:
 
 ../Inc/main.h:
 
@@ -72,14 +76,6 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-../Src/tim2.h:
-
-../Src/typ.h:
-
-../Src/tim3.h:
-
-../Src/tim4.h:
-
 ../Src/ctl.h:
 
-../Src/exti.h:
+../Src/fse.h:

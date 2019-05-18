@@ -16,6 +16,7 @@
 #include "tim3.h"
 #include "tim4.h"
 #include "ser1.h"
+#include "fse.h"
 
 
 /******************************************************************************
@@ -47,7 +48,7 @@ TUINT8 au8Temp[100];
 
 TUINT8 CTL_Temp = 0;
 
-TUINT8 CTL_FailSafe_Detected = 0;
+
 
 /******************************************************************************
 *  Local Function Prototypes
@@ -124,18 +125,20 @@ void CTL_Main (void)
 	au8Temp[14] = unAnyData.au8Data[0];
 	au8Temp[15] = unAnyData.au8Data[1];
 
-	au8Temp[16] = CTL_FailSafe_Detected;
+	au8Temp[16] = FSE_u8FailSafe_LEDisBlinking;
+	au8Temp[17] = FSE_u8FailSafe_LEDisOn;
 
 
-	SER1_Send_Protocol(au8Temp, 17);
+	SER1_Send_Protocol(au8Temp, 18);
 
 
 	HAL_UART_Transmit_DMA(&huart1, SER1_au8SndBuf, SER1_TransmitFrameLength) ;
 
 
+
+
+
 }
-
-
 
 
 

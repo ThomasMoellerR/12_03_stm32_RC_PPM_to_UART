@@ -69,16 +69,11 @@ void EXTI_HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	if (GPIO_Pin == GPIO_PIN_13)
 	{
 		FSE_u16FailSafe_LEDisBlinkingCounter = 0;
-		FSE_u8FailSafe_LEDisOnCounter = 0;
 
-		FSE_u8FailSafe_LEDisOnCounter_Blocking = 0;
 	}
 	else
 	{
 		FSE_u16FailSafe_LEDisBlinkingCounter = 0;
-		FSE_u8FailSafe_LEDisOnCounter = 0;
-
-		FSE_u8FailSafe_LEDisOnCounter_Blocking = 0;
 	}
 
 

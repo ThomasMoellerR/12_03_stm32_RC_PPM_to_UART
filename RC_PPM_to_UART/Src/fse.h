@@ -35,9 +35,6 @@ extern TUINT8 FSE_Temp;
 extern TUINT16 FSE_u16FailSafe_LEDisBlinkingCounter;
 extern TUINT8 FSE_u8FailSafe_LEDisBlinking;
 
-extern TUINT8 FSE_u8FailSafe_LEDisOnCounter;
-extern TUINT8 FSE_u8FailSafe_LEDisOnCounter_Blocking;
-extern TUINT8 FSE_u8FailSafe_LEDisOn;
 
 
 

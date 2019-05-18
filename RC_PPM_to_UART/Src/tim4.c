@@ -98,14 +98,7 @@ void TIM4_HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 
 
-	if (!HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13))
-	{
-		FSE_u8FailSafe_LEDisOn = 1;
-	}
-	else
-	{
-		FSE_u8FailSafe_LEDisOn = 0;
-	}
+
 
 
 

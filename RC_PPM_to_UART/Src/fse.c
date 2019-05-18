@@ -33,9 +33,7 @@ TUINT8 FSE_Temp = 0;
 TUINT16 FSE_u16FailSafe_LEDisBlinkingCounter;
 TUINT8 FSE_u8FailSafe_LEDisBlinking;
 
-TUINT8 FSE_u8FailSafe_LEDisOnCounter;
-TUINT8 FSE_u8FailSafe_LEDisOnCounter_Blocking = 0;
-TUINT8 FSE_u8FailSafe_LEDisOn;
+
 
 /******************************************************************************
 *  Local Function Prototypes

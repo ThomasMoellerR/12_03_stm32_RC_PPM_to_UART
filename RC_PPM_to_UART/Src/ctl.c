@@ -126,7 +126,9 @@ void CTL_Main (void)
 	au8Temp[15] = unAnyData.au8Data[1];
 
 	au8Temp[16] = FSE_u8FailSafe_LEDisBlinking;
-	au8Temp[17] = FSE_u8FailSafe_LEDisOn;
+
+
+	au8Temp[17] = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) ? 0 : 1;
 
 
 	SER1_Send_Protocol(au8Temp, 18);
